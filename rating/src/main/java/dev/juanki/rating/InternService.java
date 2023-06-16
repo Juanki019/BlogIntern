@@ -17,10 +17,6 @@ public class InternService {
         return internRepository.findAll();
     }
 
-    public Optional<Intern> getInternById(ObjectId id) {
-        return internRepository.findById(id);
-    }
-
     public Optional<Intern> getInternByImdbId(String imdbId) {
         return internRepository.findByImdbId(imdbId);
     }

@@ -24,15 +24,20 @@ public class InternController {
         return new ResponseEntity<List<Intern>>(internService.allInterns(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<Intern>> getInternsId(@PathVariable ObjectId id) {
-        return new ResponseEntity<Optional<Intern>>(internService.getInternById(id), HttpStatus.OK);
-    }
-
-    @GetMapping("/{imdbid}/imdbid")
+    @GetMapping("/{imdbid}")
     public ResponseEntity<Optional<Intern>> getInternsId(@PathVariable String imdbid) {
         return new ResponseEntity<Optional<Intern>>(internService.getInternByImdbId(imdbid), HttpStatus.OK);
     }
 
+    @RequestMapping("/error")
+    public String handleError() {
+        // Lógica para manejar el error y devolver la vista apropiada
+        return "error"; // El nombre de la vista de error que deseas mostrar
+    }
+
 
 }
+
+
+
+
